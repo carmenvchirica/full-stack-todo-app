@@ -1,13 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { NgIf } from '@angular/common'; // Added
+import { NgIf } from '@angular/common';
+import { FormsModule } from '@angular/forms'; // Added
 
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrl: './login.component.css',
-  // standalone: true, // Generated - Change
-  // imports: [NgIf] // Added
+    selector: 'app-login',
+    templateUrl: './login.component.html',
+    styleUrl: './login.component.css',
+    standalone: true,
+    imports: [NgIf, FormsModule],
 })
 export class LoginComponent implements OnInit {
 

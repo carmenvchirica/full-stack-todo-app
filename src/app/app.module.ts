@@ -9,18 +9,16 @@ import { FormsModule } from '@angular/forms';
 import { ErrorComponent } from './error/error.component';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    WelcomeComponent,
-    LoginComponent,
-    ErrorComponent
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    FormsModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+    declarations: [AppComponent],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        FormsModule,
+        WelcomeComponent,
+        LoginComponent,
+        ErrorComponent
+    ],
+    providers: [],
+    bootstrap: [AppComponent]
 })
 export class AppModule { }
