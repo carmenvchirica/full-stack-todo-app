@@ -1,24 +1,93 @@
 # See https://docs.github.com/get-started/getting-started-with-git/ignoring-files for more about ignoring files.
 
+
+# Ignore MacOS system files
+.DS_Store
+
+# Ignore Windows system files
+Thumbs.db
+
 # Compiled output
 /dist
 /tmp
 /out-tsc
 /bazel-out
 
-# Node
+# Node.js / Angular ignores
 /node_modules
+/dist
 npm-debug.log
 yarn-error.log
+package-lock.json
+yarn.lock
+/coverage/
+/.angular/
+/.idea/
+/.vscode/
+/.sass-cache/
+temp/
+*.bak
+*.tmp
+*.log
+# Ignore Angular environments, if they're private
+/src/environments/*.ts
+
+# Ignore build directory
+/build/
+
+# Java / Spring Boot ignores
+# Ignore target/ (Maven) or build/ (Gradle) directories where compiled code is generated
+target/
+build/
 
 # IDEs and editors
-.idea/
+*.ipr
+*.iws
 .project
 .classpath
 .c9/
 *.launch
 .settings/
 *.sublime-workspace
+
+# Logs
+*.log
+spring.log
+
+# Temporary files
+*.tmp
+*.swp
+*.swo
+
+# Maven / Gradle
+/.mvn/
+!mvnw
+!mvnw.cmd
+mvnw.cmd
+/.gradle/
+/.gradle/
+/build/
+
+# Eclipse
+.project
+.classpath
+.settings/
+
+# IntelliJ IDEA project files
+/.idea/
+/*.iml
+*.class
+
+# Ignore JAR, WAR files
+*.jar
+*.war
+
+# Lombok generated files
+**/lombok.config
+
+# Spring Boot specific
+**/.spring-boot-devtools.properties
+**/META-INF/**
 
 # Visual Studio Code
 .vscode/*
@@ -37,6 +106,8 @@ yarn-error.log
 testem.log
 /typings
 
-# System files
-.DS_Store
-Thumbs.db
+# Ignore sensitive configuration files
+src/main/resources/application.properties
+src/main/resources/application.yml
+src/main/resources/application-*.properties
+src/main/resources/application-*.yml
