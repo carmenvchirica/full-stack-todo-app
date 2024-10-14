@@ -9,9 +9,10 @@ import { FormsModule } from '@angular/forms';
 import { ErrorComponent } from './error/error.component';
 import { MenuComponent } from './menu/menu.component';
 import { FooterComponent } from './footer/footer.component';
+import { LogoutComponent } from './logout/logout.component';
 
 @NgModule({
-    declarations: [AppComponent],
+    declarations: [AppComponent, LogoutComponent],
     imports: [
         BrowserModule,
         AppRoutingModule,
