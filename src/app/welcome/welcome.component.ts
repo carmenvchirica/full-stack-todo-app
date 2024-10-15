@@ -1,7 +1,7 @@
 import { NgIf } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, RouterLink } from '@angular/router';
-import { WelcomeDataService } from '../services/data/welcome-data.service';
+import { HelloWorldBean, WelcomeDataService } from '../services/data/welcome-data.service';
 
 @Component({
     selector: 'app-welcome',
@@ -14,6 +14,7 @@ export class WelcomeComponent implements OnInit {
 
   name = '';
   message = 'Welcome to our amazing page!';
+  welcomeMessageFromService: string = '';
 
   constructor(private route: ActivatedRoute, 
     private service: WelcomeDataService) {}
@@ -24,7 +25,18 @@ export class WelcomeComponent implements OnInit {
   }
 
   getWelcomeMessage() {
-    this.service.executeHelloWorldService();
-
+    this.service.executeHelloWorldService().subscribe(
+      response => this.handleSuccessfulResponse(response), 
+      error => this.handleErrorResponse(error.error)
+    );
   }
+
+  handleSuccessfulResponse(response: HelloWorldBean) {
+    this.welcomeMessageFromService = response.message;
+  }
+
+  handleErrorResponse(response: HelloWorldBean) {
+    this.welcomeMessageFromService = response.message;
+  }
+  
 }
