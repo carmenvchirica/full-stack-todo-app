@@ -1,4 +1,5 @@
 
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 @Injectable({
@@ -6,10 +7,10 @@ import { Injectable } from '@angular/core';
 })
 export class WelcomeDataService {
 
-  constructor(/*private http: HttpClient*/) { }
+  constructor(private http: HttpClient) { }
 
   executeHelloWorldService() {
-    let data = '';// this.http.get('http://localhost:8080/hello-bean');
+    let data = this.http.get('http://localhost:8080/hello-bean');
     console.log('data=', data);
     return data;
   }
