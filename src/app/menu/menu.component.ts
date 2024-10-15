@@ -20,6 +20,11 @@ export class MenuComponent implements OnInit {
 
   ngOnInit(): void {
     this.isUserLoggedIn = this.hardcodedAuthenticationService.isUserLoggedIn();
+
+    // Subscribe to the login status observable to update the menu
+    this.hardcodedAuthenticationService.isUserLoggedIn$.subscribe(isLoggedIn => {
+      this.isUserLoggedIn = isLoggedIn;
+    });
   }
 
 }
